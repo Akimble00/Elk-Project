@@ -59,7 +59,8 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible? Ansibles can be used to automate daily tasks so IT administrators can save time and perform tasks more efficiently resulting >
+- _TODO: What is the main advantage of automating configuration with Ansible? 
+- Ansibles can be used to automate daily tasks so IT administrators can save time and perform tasks more efficiently resulting >
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 -.install docker.io
@@ -81,7 +82,6 @@ This ELK server is configured to monitor the following machines:
 | Web-2     |           | 10.0.0.6       |
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
 -.filebeat
 -.metricbeat
 
