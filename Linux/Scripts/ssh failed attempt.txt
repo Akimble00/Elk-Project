@@ -1,0 +1,11 @@
+#!/bin/bash
+
+while:
+do:
+
+         ssh @azureuser@10.0.0.5
+         ssh @azureuser@10.0.0.6
+         ssh @azureuser@10.2.0.4
+done
+
+echo all done

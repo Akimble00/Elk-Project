@@ -1,0 +1,54 @@
+Linux and Ansible Scripts
+
+whoami to determine the current user
+su to switch the user
+sudo to invoke the root user for one command only
+sudo -l to list the sudo priveleges for a user
+visudo to edit the sudeoers file
+groups get group info for a user
+usermod lock users account to prevent them from logging in
+deluser--remove--home--  delete the user
+delgroup delete the general group
+adduser create the user
+addgroup create a developer group
+usermod add the user to the developer group
+
+ls -l show the permissions info
+chmod change the permissions info
+chown change the owner and group of a file
+
+sudo tar cvf archive name] /var/log
+mkdir dir makes a directory
+cd dir change the directory
+touch file creates file
+nano edits files
+cat to view the file you just created
+sudo apt install install
+
+tail to see the end
+ls list
+rm remove
+crontab status -l
+
+
+To generate the rsa key:
+ssh -keygen 
+
+To ssh into the VM:
+ssh [username]@publicIP address
+sudo apt update
+
+sudo docker systemctl status docker - will show the status (if its running or not)
+
+To list the containers:
+sudo docker conatiner list -a 
+
+To start the container:
+sudo docker start [container ID]
+sudo docker attach [container ID]
+ 
+to exit out of the container just type exit
+
+cd etc/ansible/ to go into the ansible
+ansible-playbook [playbook name] to run the play book
+ 
