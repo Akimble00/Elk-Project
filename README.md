@@ -23,9 +23,9 @@ Load balancing ensures that the application will be highly PROTECTED, in additio
  Layer 4 of the OSI model. Load balancers prevent servers from breaking down from being overloaded. 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs system traffic.
 - _TODO: What does Filebeat watch for?
- Filebeat watches the log files_
+ Filebeat watches the log files and collects data
 - _TODO: What does Metricbeat record?
- MySQL
+ Metricbeat records machine metrics and stats such as uptime, CPU and RAM usage,
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -42,11 +42,9 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet.
 
 Only the Jump-Bo-x machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
 10.0.0.4
 
 Machines within the network can only be accessed by ____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?
 Jump-Box VM 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
@@ -88,7 +86,7 @@ We have installed the following Beats on these machines:
 -.metricbeat
 
 These Beats allow us to collect the following information from each machine:
-Filebeat monitors the log files or locations that you specify, which we use to see what changes or messages the log files have received such as kill commands. Metricbeat records the metrics and statistics from the operation system and from services running on the server, which we could use to look at how much RAM or CPU usage was being used on the webservers at certain time.
+Filebeat collects log files from specific locations. Metricbeat records the statistics and provides charts from the OS as well as services running on the server,the amount of RAM or CPU usage being used on the webservers at given time can be seen.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
@@ -98,15 +96,14 @@ SSH into the control node and follow the steps below:
 - Update the host file to include webserver and ELK
 - Run the playbook, and navigate to Kibana to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it? 
-filebeat-playbook.yml will be copied to the etc/ansible/host
+filebeat-playbook.yml will be copied to the /etc/ansible/host/
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
 filebeat.yml has to be updated
  which is a configuration file that will be dropped into the Elk-Server during the run of the ansible-playbook.
 update the host.cfg file in the ansible directory 
 you will need to create a new group called [elkservers] and add the Private IP of the Elk-Server to the group. 
-designate the Private IP of the Elk-Server in lines 106 and 1806.
+designate the Private IP of the Elk-Server in lines 1106 and 1806.
 
 - _Which URL do you navigate to in order to check that the ELK server is running? 
 http://publicIP/app/kibana
